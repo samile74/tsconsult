@@ -1,0 +1,15 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <div><label for="name">Name : </label><input type="text" name="name" ngModel #first="ngModel"/></div>
+  <div><label for="firstname">Firstname : </label><input type="text" name="firstname" ngModel/></div>
+  <div><label for="adress">Adress : </label><input type="text" name="adress" ngModel/></div>
+  <div><button>Insert</button></div>
+</form>
+<hr>
+<div>
+  <button (click)="findBy('id')">Find all</button>
+  <button (click)="findBy('name')">Find distinct name</button>
+  <button (click)="findBy('firstname')">Find distinct firstname</button>
+  <button (click)="findBy('adress')">Find distinct adress</button>
+</div>
+<hr>
+<div #employeArray></div>
