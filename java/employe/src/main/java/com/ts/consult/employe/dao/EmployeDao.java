@@ -11,14 +11,8 @@ import com.ts.consult.employe.entities.EmployeEntity;
 @Service
 public interface EmployeDao extends CrudRepository<EmployeEntity, Long>{
 
-	@Query(value="SELECT u FROM EmployeEntity u GROUP BY name") 
-	List<EmployeEntity> findDistinctName();
-
-	@Query(value="SELECT  u FROM EmployeEntity u GROUP BY firstname") 
-	List<EmployeEntity> findDistinctFirstname();
-
-	@Query(value="SELECT  u FROM EmployeEntity u GROUP BY adress") 
-	List<EmployeEntity> findDistinctAdress();
+	@Query(value="SELECT  u FROM EmployeEntity u GROUP BY ?1") 
+	List<EmployeEntity> findDistinct(String column);
 
 	List<EmployeEntity> findByName(String name);
 	
